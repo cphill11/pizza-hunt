@@ -1,5 +1,6 @@
 // import dependencies; Schema constructor & model fxn come straight from Mongoose
 const { Schema, model } = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
 // create schema w/ desired data after import functionality
 const PizzaSchema = new Schema({
@@ -12,7 +13,8 @@ const PizzaSchema = new Schema({
     createdAt: {
       type: Date,
       // creates timestamp should user not enter a value
-      default: Date.now
+      default: Date.now,
+      get: (createdAtVal) => dateFormat(createdAtVal)
     },
     size: {
       type: String,
@@ -30,6 +32,7 @@ const PizzaSchema = new Schema({
   {
     toJSON: {
       virtuals: true,
+      getters: true
     },
     id: false
 });

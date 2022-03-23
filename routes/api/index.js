@@ -1,5 +1,6 @@
 // hook the routes set up in pizza-routes.js into the entire server
 const router = require('express').Router();
+const commentRoutes = require('./comment-routes');
 const pizzaRoutes = require('./pizza-routes');
 
 // export routes
