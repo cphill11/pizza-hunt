@@ -42,7 +42,6 @@ function saveRecord(record) {
   pizzaObjectStore.add(record);
 }
 
-// Lines 45+ ADDED AFTER 4.6 (u/a to test code as outlined in 4.6 due to errors; see screenshot)
 // handles collecting all of data from new_pizza object store in IndexedDB and POST it to server
 function uploadPizza() {
   // open a transaction on your db
